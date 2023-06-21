@@ -1,0 +1,22 @@
+{
+  "name": "puzzle-box",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matt McElwee <matt.mcelwee@jointhebibleproject.com>",
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^2.4.2",
+    "knex-serverless-mysql": "^1.1.0",
+    "serverless-mysql": "^1.5.5"
+  },
+  "devDependencies": {
+    "@dmsi/prettier-config": "^1.3.0",
+    "@netlify/functions": "^1.6.0",
+    "netlify-cli": "^15.6.0",
+    "prettier": "^2.8.8"
+  },
+  "prettier": "@dmsi/prettier-config",
+  "scripts": {
+    "start": "netlify dev"
+  }
+}
