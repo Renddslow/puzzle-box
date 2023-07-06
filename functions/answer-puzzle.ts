@@ -93,12 +93,16 @@ const handler: Handler = async (event, context) => {
     const stageColumn = stage === 1 ? `stage_one_solution` : `stage_two_solution`;
     if (puzzle[stageColumn].trim() === answer.trim()) {
       await insertResponse(stage, true);
-      return stage === 1
-        ? makeResponse(
-            `**Correct!** Now solve part 2 to be a true puzzle master: ${puzzle.stage_two_clue}`,
-            'puzzle',
-          )
-        : makeResponse('You solved it!', 'completion_message');
+      console.log(`Answer was correct`);
+      const message =
+        stage === 1
+          ? makeResponse(
+              `**Correct!** Now solve part 2 to be a true puzzle master: ${puzzle.stage_two_clue}`,
+              'puzzle',
+            )
+          : makeResponse('You solved it!', 'completion_message');
+      console.log(message);
+      return message;
     }
 
     await insertResponse(stage);
