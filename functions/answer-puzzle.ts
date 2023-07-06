@@ -18,14 +18,14 @@ const knex = Knex({
 });
 
 const makeError = (message: string) => ({
-  statusCode: 400,
+  statusCode: 200,
   headers: {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
     errors: [
       {
-        status: 400,
+        status: 200,
         detail: message,
       },
     ],
